@@ -94,7 +94,7 @@ gulp.task('watch', function() {
 });
 
 // ADDITIONAL TASKS
-gulp.task('live-build', ['watch', 'browser-sync']);
+gulp.task('live-build', ['full-build', 'watch', 'browser-sync']);
 gulp.task('light-build', ['sass', 'js']);
 gulp.task('full-build', ['sass', 'js', 'img']);" >> gulpfile.js
 

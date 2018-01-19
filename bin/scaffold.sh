@@ -4,10 +4,10 @@ echo "============================================"
 echo "WordPress Install Script"
 echo "============================================"
 
-# echo "Database Name: " && read -e dbname
-# echo "Database User: " && read -e dbuser
-# echo "Database Password: " && read -s dbpass
-# echo "run install? (y/n)" && read -e run
+echo "Database Name: " && read -e dbname
+echo "Database User: " && read -e dbuser
+echo "Database Password: " && read -s dbpass
+echo "run install? (y/n)" && read -e run
 
 if [ "$run" == n ] ; then
 	exit
@@ -80,8 +80,20 @@ if ! type wp > /dev/null ; then
 		echo "Wordpress Command Line Tools already installed"
 fi
 
+#INSTALL REQUIRED PLUGINS VIA WP-CLI
+cd wp/wp-core
+wp plugin install timber-library --activate
+
+#INSTALL TIMBER STARTER THEM
+cd wp-content/themes
+wget https://github.com/timber/starter-theme/archive/master.zip && unzip master.zip
+mv starter-theme-master customtheme
+rm master.zip && rm -r customtheme/bin && rm -r customtheme/tests
+cd ../..
+wp theme activate customtheme
+
 #HARDEN WORDPRESS
-cd wp/wp-core && mkdir wp-content/uploads && sudo ./../../bin/harden.sh
+mkdir wp-content/uploads && sudo ./../../bin/harden.sh
 
 #FIX FILE PERMISSIONS SO ONLY WP-CONTENT/UPLOADS IS WRITABLE
 sudo ./../../bin/perms.sh

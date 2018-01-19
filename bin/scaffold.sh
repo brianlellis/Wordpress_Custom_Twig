@@ -23,7 +23,7 @@ else
 	tar -zxvf latest.tar.gz
 
 	#change dir to wordpress
-	mkdir wp && mv wordpress wp/wp-core && cd wp/wp-core
+	mv wordpress wp && cd wp
 
 	#create wp config
 	cp wp-config-sample.php wp-config.php
@@ -48,12 +48,7 @@ else
 	# mkdir wp-content/uploads && chmod 775 wp-content/uploads && echo "Cleaning..."
 
 	#remove zip file
-	cd ../.. && rm latest.tar.gz
-
-	#remove bash script
-	echo "========================="
-	echo "Installation is complete."
-	echo "========================="
+	cd .. && rm latest.tar.gz
 fi
 
 #SET UP WP WITH COMPOSER AND MV FILES AS NEEDED
@@ -81,7 +76,7 @@ if ! type wp > /dev/null ; then
 fi
 
 #INSTALL REQUIRED PLUGINS VIA WP-CLI
-cd wp/wp-core
+cd wp
 wp plugin install timber-library --activate
 
 #INSTALL TIMBER STARTER THEM
@@ -92,12 +87,20 @@ rm master.zip && rm -r customtheme/bin && rm -r customtheme/tests
 wp theme activate customtheme
 
 #APPLY FRONTEND ASSETS TO CUSTOM THEME
-cd customtheme
-./../../../../../bin/frontend.sh
 cd ../../..
+./bin/frontend.sh
+
+#SETUP SYMLINKS
+./bin/symlink.sh
+cd wp
 
 #HARDEN WORDPRESS
-mkdir wp-content/uploads && sudo ./../../bin/harden.sh
+#mkdir wp-content/uploads && sudo ./../bin/harden.sh
 
 #FIX FILE PERMISSIONS SO ONLY WP-CONTENT/UPLOADS IS WRITABLE
-sudo ./../../bin/perms.sh
+#sudo ./../bin/perms.sh
+
+#FINISH BASH SCRIPT
+	echo "========================="
+	echo "Installation is complete."
+	echo "========================="

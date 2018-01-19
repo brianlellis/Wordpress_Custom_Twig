@@ -57,7 +57,7 @@ gulp.task('sass', function () {
     gulp.src('./css/**/*.scss')
     	.pipe(plumber(plumberErrorHandler))
         .pipe(sass())
-        .pipe(gulp.dest('./'));
+        .pipe(gulp.dest('./theme/'));
 });
  
 

@@ -38,7 +38,7 @@
 			}
 			ul {
 				display: none;
-			    background-color: #37b6ab;
+			    background-color: #435460;
 			    animation-duration: 0.5s;
 		        width: 160px;
 		        left: calc(50% - 80px);
@@ -49,11 +49,14 @@
 			    position: absolute;
 			    box-sizing: border-box;
 			    padding: 10px 0;
+			    border-bottom: 2px solid white;
 
 			    &:before {
 				    content: '';
 				    position: absolute;
-				    background-color: #37b6ab;
+				    background-color: #435460;
+				    border-bottom: 2px solid white;
+				    border-right: 1px solid white;
 				    top: 0;
 				    left: 50%;
 				    width: 14px;
@@ -75,3 +78,10 @@
 		}
 	}
 }
+
+.hdr-logo { 
+	display: inline-block; 
+	margin-left: 8.5%; 
+	a { color: #435460 }
+}
+.wpb_wrapper { float: right; margin-right: 8%; margin-top: 26px; }

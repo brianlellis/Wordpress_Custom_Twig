@@ -8,7 +8,9 @@
 
 // 2. Vendors
 @import
-  'vendor/normalize';
+  'vendor/normalize',
+  'vendor/fontello',
+  'vendor/socials';
 
 // 3. Base stuff
 @import
@@ -19,6 +21,7 @@
 
 // 4. Layout-related sections
 @import
+  'layout/pageLayout',
   'layout/header',
   'layout/footer';
 

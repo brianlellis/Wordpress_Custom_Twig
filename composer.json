@@ -1,5 +1,5 @@
 {
-  "name": "johnpbloch/wordpress",
+  "name": "brianlellis",
   "description": "WordPress is web software you can use to create a beautiful website or blog.",
   "keywords": [
     "wordpress",
@@ -24,12 +24,7 @@
   },
   "require": {
     "php": ">=5.3.2",
-    "johnpbloch/wordpress-core-installer": "^1.0",
-    "johnpbloch/wordpress-core": "dev-master",
     "twig/twig": "2.4.4",
     "timber/timber": "^1.6"
-  },
-  "extra": {
-    "wordpress-install-dir": "wp/wp-core"
   }
 }

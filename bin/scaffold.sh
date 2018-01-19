@@ -5,8 +5,14 @@ echo "WordPress Install Script"
 echo "============================================"
 
 echo "Database Name: " && read -e dbname
+echo "Does this DB need creation? 'y' for yes" && read -e dbans
 echo "Database User: " && read -e dbuser
 echo "Database Password: " && read -s dbpass
+
+if [ "$dbans" = 'y' ] ; then
+	mysql -u$dbuser -p$dbpass -e "create database $dbname"; 
+fi
+
 echo "run install? (y/n)" && read -e run
 
 if [ "$run" == n ] ; then

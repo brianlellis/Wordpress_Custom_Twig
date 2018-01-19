@@ -38,6 +38,8 @@ If you have already customized the site or want to bring in a compliant CSS them
 
 ## Gotchas
 
+### Make sure to have your apache instance and host set up to be able to install the WP instance before continuing in scaffold.sh
+
 The file permissions and hardening of Wordpress are not required. You can choose __'n'__ for these. Use at your own caution as they create .htaccess files across multiple dirs and reset your file permission in order to make WP more secure.
 
 ### Why is package.json and gulpfile.js done in BASH?

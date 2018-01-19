@@ -1,0 +1,25 @@
+#content {
+	> .wrapper {
+		padding: 0 8.5%;
+	}
+}
+
+.article-content {
+	position: relative;
+	.article-h1 {
+		top: 10px;
+		background-color: #435460;
+	    box-shadow: inset 0 0 80px 2px rgba(0, 0, 0, 0.8);
+	    line-height: 120px;
+	    color: white;
+	    font-size: 66px;
+	    font-weight: 900;
+	    position: absolute;
+	    left: -10.5%;
+	    width: 120.5%;
+	    padding-left: 9.5%;
+	}
+	.article-body {
+		padding-top: 150px;
+	}
+}

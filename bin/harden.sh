@@ -1,4 +1,4 @@
-#!/bin/bash -ue
+#!/bin/sh
 
 
 function main() {

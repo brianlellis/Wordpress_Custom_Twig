@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 if ! type gulp > /dev/null ; then
 	npm install gulp-cli -g

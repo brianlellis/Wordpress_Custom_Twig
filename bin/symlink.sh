@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 if [ -d "./theme" ]; then
 	echo "Since you already have a theme let's remove the custom one from Timber"
 	rm -r wp/wp-content/themes/customtheme

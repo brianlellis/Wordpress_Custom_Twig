@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 clear
 echo "============================================"
 echo "WordPress Install Script"
@@ -93,6 +93,14 @@ cd ../../..
 #SETUP SYMLINKS
 ./bin/symlink.sh
 cd wp
+
+#SETUP TEST DATA
+echo "Install test data? 'y' for yes" && read -e TESTY
+
+if [[ $TESTY = "y" ]] ; then
+	echo $PWD
+	./../bin/test-data.sh
+fi
 
 #HARDEN WORDPRESS
 mkdir wp-content/uploads && sudo ./../bin/harden.sh

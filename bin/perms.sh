@@ -1,4 +1,4 @@
-#!/bin/bash -ue
+#!/bin/sh
 
 # ----------------------------------------
 # Sets safe wordpress permissions so the site is less prone to being hacked.

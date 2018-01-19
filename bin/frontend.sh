@@ -83,9 +83,7 @@ gulp.task('img', function() {
 // Browser Sync 
 gulp.task('browser-sync', function() {
     browserSync.init({
-        server: {
-            baseDir: 'build/'
-        }
+        proxy: 'localhost:8888'
     });
 });
 
@@ -96,6 +94,7 @@ gulp.task('watch', function() {
 });
 
 // ADDITIONAL TASKS
+gulp.task('live-build', ['watch', 'browser-sync']);
 gulp.task('light-build', ['sass', 'js']);
 gulp.task('full-build', ['sass', 'js', 'img']);" >> gulpfile.js
 

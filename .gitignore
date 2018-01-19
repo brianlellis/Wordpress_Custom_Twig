@@ -76,5 +76,5 @@ composer.lock
 # CUSTOM CONFIG
 gulpfile.js
 package.json
-**/*.css
+*.css
 **/.htaccess

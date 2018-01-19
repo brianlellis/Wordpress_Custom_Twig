@@ -118,3 +118,5 @@ sudo ./../bin/perms.sh
 	echo "========================="
 	echo "Installation is complete."
 	echo "========================="
+
+gulp live-build

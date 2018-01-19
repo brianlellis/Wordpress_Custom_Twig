@@ -43,6 +43,10 @@ If you have already customized the site or want to bring in a compliant CSS them
 
 The file permissions and hardening of Wordpress are not required. You can choose __'n'__ for these. Use at your own caution as they create .htaccess files across multiple dirs and reset your file permission in order to make WP more secure.
 
+### Why is package.json and gulpfile.js done in BASH?
+
+I chose to write the FED asset scaffolding in BASH as this is strictly a starter/scaffolding system. If you don't want Gulp or the modules intended then remove the __frontend.sh__ call in __scaffold.sh__ or keep and then configure the files as needed for your repo. The goal was to keep the system as minimal as possible till executed.
+
 # EASY GULP 
 
  * __gulp live-build__ Executes watch on img, js, sass files while also serving a local browser instance through proxy

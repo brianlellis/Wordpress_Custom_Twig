@@ -118,5 +118,5 @@ fi
 if [ -d "./js" ]; then
 	echo "JS is already set up!"
 else
-	mkdir js
+	cd .. && mkdir js
 fi

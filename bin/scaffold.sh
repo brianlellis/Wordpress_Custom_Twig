@@ -89,8 +89,12 @@ cd wp-content/themes
 wget https://github.com/timber/starter-theme/archive/master.zip && unzip master.zip
 mv starter-theme-master customtheme
 rm master.zip && rm -r customtheme/bin && rm -r customtheme/tests
-cd ../..
 wp theme activate customtheme
+
+#APPLY FRONTEND ASSETS TO CUSTOM THEME
+cd customtheme
+./../../../../../bin/frontend.sh
+cd ../../..
 
 #HARDEN WORDPRESS
 mkdir wp-content/uploads && sudo ./../../bin/harden.sh

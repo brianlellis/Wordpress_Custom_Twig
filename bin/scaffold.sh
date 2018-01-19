@@ -16,7 +16,7 @@ fi
 echo "run install? (y/n)" && read -e run
 
 if [ "$run" == n ] ; then
-	exit
+	echo "Skipping the basic WP Install"
 else
 	echo "============================================"
 	echo "A robot is now installing WordPress for you."
@@ -58,7 +58,7 @@ else
 fi
 
 #SET UP WP WITH COMPOSER AND MV FILES AS NEEDED
-composer install #&& mv wp/wp-core/wp-content wp/wp-content && mv wp/wp-core/wp-config-sample.php wp/wp-config.php
+#composer install #&& mv wp/wp-core/wp-content wp/wp-content && mv wp/wp-core/wp-config-sample.php wp/wp-config.php
 
 #CREATE WP-CONFIG IN CORE TO INCLUDE THE OUTER WP-CONFIG
 #touch wp/wp-core/wp-config.php && printf "<?php\ninclude('../wp-config.php');" >> wp/wp-core/wp-config.php
@@ -81,16 +81,22 @@ if ! type wp > /dev/null ; then
 		echo "Wordpress Command Line Tools already installed"
 fi
 
+#IF NEW SITE WITH NEW DB THEN EXIT BEFORE CONTINUING
+echo "Have you initial set up Wordpress in the browser?\n\n====================================================================\nIf not go do that and then come back and type 'y'\n====================================================================\n\n" && read -e wpinstall
+if [ "$wpinstall" = n ] ; then
+	echo "Finish the basic install in your browser and then restart scaffold.sh"
+	exit
+fi
+
 #INSTALL REQUIRED PLUGINS VIA WP-CLI
-cd wp
-wp plugin install timber-library --activate
+echo "WP-CLI DIR: $PWD"
+cd wp && wp plugin install timber-library --activate
 
 #INSTALL TIMBER STARTER THEM
 cd wp-content/themes
 wget https://github.com/timber/starter-theme/archive/master.zip && unzip master.zip
 mv starter-theme-master customtheme
-rm master.zip && rm -r customtheme/bin && rm -r customtheme/tests
-wp theme activate customtheme
+rm master.zip && rm -r customtheme/bin && rm -r customtheme/tests && wp theme activate customtheme
 
 #APPLY FRONTEND ASSETS TO CUSTOM THEME
 cd ../../..

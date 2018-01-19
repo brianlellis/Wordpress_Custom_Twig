@@ -26,7 +26,7 @@ A Wordpress scaffolding theme with Gulp, Timber and Twig
   
   * /bin
 
-These scripts will be the latest version of Wordpress and Timber into your local environment.
+These scripts will bring in the latest version of Wordpress and Timber into your local environment.
 
 ## Start the process
 

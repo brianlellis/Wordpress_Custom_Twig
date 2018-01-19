@@ -37,6 +37,8 @@ Simply navigate to the root dir of the repo and run:
 ./bin/scaffold.sh
 ```
 
+If you have already customized the site or want to bring in a compliant CSS theme or JS assets that is fine. The scaffolder checks for CSS and JS dirs in the root install before creating new ones to allow for modular migrations and sharing of assets between multiple WP_Twig instances.
+
 ## Gotchas
 
 The file permissions and hardening of Wordpress are not required. You can choose __'n'__ for these. Use at your own caution as they create .htaccess files across multiple dirs and reset your file permission in order to make WP more secure.

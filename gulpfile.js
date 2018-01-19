@@ -55,9 +55,9 @@ gulp.task('browser-sync', function() {
 });
 
 gulp.task('watch', function() { 
-  gulp.watch('css/src/*.scss', ['sass']); 
-  gulp.watch('js/src/*.js', ['js']); 
-  gulp.watch('img/src/*.{png,jpg,gif}', ['img']); 
+  gulp.watch('css/**/*.scss', ['sass']); 
+  gulp.watch('js/**/*.js', ['js']); 
+  gulp.watch('ulpoads/**/*.{png,jpg,gif}', ['img']); 
 });
 
 // ADDITIONAL TASKS

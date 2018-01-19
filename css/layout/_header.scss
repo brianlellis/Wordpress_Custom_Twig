@@ -1,3 +1,77 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
+
+#nav-main {
+	border-top: 1px solid #DDD;
+	width: 100%;
+	padding: 0 7.5%;
+	box-sizing: border-box;
+	&.nav-main >ul>li {
+		padding: 10px  0;
+	}
+	ul {
+	    text-align: left;
+	    vertical-align: middle;
+	    display: inline-block;
+	    margin: 0;
+	    padding: 0;
+	    list-style-type: none;
+
+	    li {
+		    position: relative;
+		    float: left;
+		    z-index: 20;
+		    margin: 0;
+		    a {
+			    font-family: Sanchez,serif;
+			    font-weight: 400;
+			    font-size: 14px;
+			    font-style: normal;
+			    text-decoration: none;
+			    text-transform: uppercase;
+			    letter-spacing: 0.1px;
+			    color: #435460
+			}
+			>a {
+				padding: 0.4em 1.6em;
+			}
+			ul {
+				display: none;
+			    background-color: #37b6ab;
+			    animation-duration: 0.5s;
+		        width: 160px;
+		        left: calc(50% - 80px);
+		        top: 2.5em;
+			    margin-left: 0;
+			    z-index: 8000;
+    			text-align: center;
+			    position: absolute;
+			    box-sizing: border-box;
+			    padding: 10px 0;
+
+			    &:before {
+				    content: '';
+				    position: absolute;
+				    background-color: #37b6ab;
+				    top: 0;
+				    left: 50%;
+				    width: 14px;
+				    height: 14px;
+				    transform: rotate(45deg) translateX(-50%);
+			    }
+			    &:after {
+				    content: ' ';
+				    display: block;
+				    width: 100%;
+				    height: 0;
+				    clear: both;
+			    }
+			    a {
+			    	color: white;
+			    }
+			}
+			&:hover ul { display: block; }
+		}
+	}
+}

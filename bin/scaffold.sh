@@ -95,10 +95,10 @@ cd ../../..
 cd wp
 
 #HARDEN WORDPRESS
-#mkdir wp-content/uploads && sudo ./../bin/harden.sh
+mkdir wp-content/uploads && sudo ./../bin/harden.sh
 
 #FIX FILE PERMISSIONS SO ONLY WP-CONTENT/UPLOADS IS WRITABLE
-#sudo ./../bin/perms.sh
+sudo ./../bin/perms.sh
 
 #FINISH BASH SCRIPT
 	echo "========================="

@@ -72,3 +72,9 @@ build/
 # Composer Assets
 vendor/
 composer.lock
+
+# CUSTOM CONFIG
+gulpfile.js
+package.json
+theme/style.css
+**/.htaccess

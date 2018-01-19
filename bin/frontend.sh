@@ -103,7 +103,10 @@ gulp.task('full-build', ['sass', 'js', 'img']);" >> gulpfile.js
 npm install
 
 #MAKE SRC BUILD APP DIR
-mkdir css && mkdir js
+if [ -d "./css" ]; then
+	echo "CSS is already set up!"
+else
+	mkdir css 
 	#Apply 7-1 SASS Architecture 
 	cd css
 	wget https://github.com/HugoGiraudel/sass-boilerplate/archive/master.zip
@@ -111,3 +114,10 @@ mkdir css && mkdir js
 	mv sass-boilerplate-master/stylesheets/* ./
 	rm -r sass-boilerplate-master
 	mv main.scss style.scss
+fi
+
+if [ -d "./js" ]; then
+	echo "JS is already set up!"
+else
+	mkdir js
+fi

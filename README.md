@@ -18,7 +18,6 @@ A Wordpress scaffolding theme with Gulp, Timber and Twig
  * e2e testing with phpUnit and Mocha framework
  * Centralized custom plugin(s) dir to dynamically register in theme
  * Abstraction of admin template for easy customization
- * Add mysql create DB logic in scaffolding scripts
  
  # How to Start
  
@@ -29,8 +28,6 @@ A Wordpress scaffolding theme with Gulp, Timber and Twig
 These scripts will bring in the latest version of Wordpress and Timber into your local environment.
 
 ## Start the process
-
-__BEFORE BEGINNING MAKE SURE YOU HAVE CREATED A DATABASE TO INSTALL WP__
 
 Simply navigate to the root dir of the repo and run:
 ```

@@ -10,7 +10,7 @@ echo "Database User: " && read -e dbuser
 echo "Database Password: " && read -s dbpass
 
 if [ "$dbans" = 'y' ] ; then
-	mysql -u$dbuser -p$dbpass -e "create database $dbname"; 
+	mysql -u$dbuser -p$dbpass -e "create database $dbname";
 fi
 
 echo "run install? (y/n)" && read -e run
@@ -92,11 +92,12 @@ fi
 echo "WP-CLI DIR: $PWD"
 cd wp && wp plugin install timber-library --activate
 
+### THIS IS NOT NEEDED AS THE THEME IS ALREADY IN THE THEME
 #INSTALL TIMBER STARTER THEM
-cd wp-content/themes
-wget https://github.com/timber/starter-theme/archive/master.zip && unzip master.zip
-mv starter-theme-master customtheme
-rm master.zip && rm -r customtheme/bin && rm -r customtheme/tests && wp theme activate customtheme
+# cd wp-content/themes
+# wget https://github.com/timber/starter-theme/archive/master.zip && unzip master.zip
+# mv starter-theme-master customtheme
+# rm master.zip && rm -r customtheme/bin && rm -r customtheme/tests && wp theme activate customtheme
 
 #APPLY FRONTEND ASSETS TO CUSTOM THEME
 cd ../../..
